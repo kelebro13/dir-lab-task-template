@@ -136,5 +136,8 @@ module.exports = {
     'yield-star-spacing': [`error`, `after`],
     'object-shorthand': [`error`, `always`, {'avoidQuotes': true}],
     'quotes': ['error', 'single', {allowTemplateLiterals: true}],
+
+    // react
+    'react/prop-types': 'off'
   }
 };
