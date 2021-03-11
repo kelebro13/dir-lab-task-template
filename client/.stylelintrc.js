@@ -1,5 +1,16 @@
 module.exports = {
+  extends: [
+    "stylelint-config-rational-order"
+  ],
   rules: {
+    // order
+    "order/properties-order": [],
+    "plugin/rational-order": [true, {
+      "empty-line-between-groups": true
+    }],
+
+    //recommend
+
     "color-hex-case": "lower",
     "color-hex-length": "long",
     "color-no-invalid-hex": true,
