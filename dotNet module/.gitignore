@@ -134,3 +134,6 @@ _NCrunch*
 
 # Visual Studio temp something
 .vs/
+
+!ClientConnectionLog.log
+bin/**/ClientConnectionLog.log
