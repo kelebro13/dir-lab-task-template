@@ -4,7 +4,7 @@ using PlanPoker.Services;
 namespace PlanPoker.Controllers
 {
   [ApiController]
-  [Route("api/[controller]")]
+  [Route("api/[controller]/[action]")]
   public class ExampleController : ControllerBase
   {
     private readonly ExampleService exampleService;
@@ -14,7 +14,7 @@ namespace PlanPoker.Controllers
       this.exampleService = exampleService;
     }
 
-    [HttpGet("test/{id}")]
+    [HttpGet]
     public int Test(int id)
     {
       return this.exampleService.TestMethod(id);
