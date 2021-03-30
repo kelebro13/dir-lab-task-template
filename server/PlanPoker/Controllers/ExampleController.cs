@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PlanPoker.Services;
+using PlanPoker.Domain.Services;
 
 namespace PlanPoker.Controllers
 {

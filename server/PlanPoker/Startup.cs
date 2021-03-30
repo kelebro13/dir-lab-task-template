@@ -3,7 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using PlanPoker.Services;
+using PlanPoker.Domain.Entities;
+using PlanPoker.Domain.Repositories;
+using PlanPoker.Domain.Services;
+using PlanPoker.Infrastructure.Repositories;
 
 namespace PlanPoker
 {
@@ -20,7 +23,9 @@ namespace PlanPoker
     {
       services.AddControllers();
 
-      services.AddSingleton<ExampleService>();
+      services.AddSingleton<IRepository<ExampleEntity>, ExampleRepository>();
+
+      services.AddTransient<ExampleService>();
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

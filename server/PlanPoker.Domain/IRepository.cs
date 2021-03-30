@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
-using DataService.Models;
+using PlanPoker.Domain.Entities;
 
-namespace DataService
+namespace PlanPoker.Domain.Repositories
 {
   public interface IRepository<T> where T : IEntity
   {
