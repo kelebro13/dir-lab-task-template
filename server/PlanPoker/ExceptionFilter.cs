@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using PlanPoker.DTO;
 
 namespace PlanPoker
 {
@@ -7,11 +9,16 @@ namespace PlanPoker
   {
     public void OnException(ExceptionContext context)
     {
-      context.Result = new ContentResult
+      var dto = new ExceptionDto()
       {
-        StatusCode = 500,
-        Content = context.Exception.Message
+        Message = context.Exception.Message
       };
+
+      context.Result = new JsonResult(dto)
+      {
+        StatusCode = StatusCodes.Status500InternalServerError
+      };
+
       context.ExceptionHandled = true;
     }
   }
