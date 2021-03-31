@@ -19,5 +19,11 @@ namespace PlanPoker.Controllers
     {
       return this.exampleService.TestMethod(id);
     }
+
+    [HttpGet]
+    public int TestException(int id)
+    {
+      return this.exampleService.ThrowException(id);
+    }
   }
 }

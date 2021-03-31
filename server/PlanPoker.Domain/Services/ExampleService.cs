@@ -1,4 +1,5 @@
-﻿using PlanPoker.Domain.Entities;
+﻿using System;
+using PlanPoker.Domain.Entities;
 using PlanPoker.Domain.Repositories;
 
 namespace PlanPoker.Domain.Services
@@ -15,6 +16,11 @@ namespace PlanPoker.Domain.Services
     public int TestMethod(int num)
     {
       return num;
+    }
+
+    public int ThrowException(int id)
+    {
+      throw new Exception($"Exception throwed {id}");
     }
   }
 }

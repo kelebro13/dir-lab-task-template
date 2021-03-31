@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -21,11 +22,16 @@ namespace PlanPoker
 
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddControllers();
+      var mvcBuilder = services.AddControllers();
 
-      services.AddSingleton<IRepository<ExampleEntity>, ExampleRepository>();
+      mvcBuilder.Services.Configure((MvcOptions options) =>
+      {
+        options.Filters.Add<ExceptionFilter>();
+      });
 
-      services.AddTransient<ExampleService>();
+      services
+        .AddSingleton<IRepository<ExampleEntity>, ExampleRepository>()
+        .AddTransient<ExampleService>();
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
