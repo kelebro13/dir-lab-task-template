@@ -7,22 +7,35 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "lint": "npm run eslint && npm run stylelint",
-    "eslint": "eslint src/**/*.js",
-    "eslint:fix": "eslint src/**/*.js --fix",
+    "eslint": "eslint src/**/*.tsx src/**/*.ts",
+    "eslint:fix": "eslint src/**/*.tsx src/**/*.ts --fix",
     "stylelint": "stylelint \"src/**/*.css\"",
     "stylelint:fix": "stylelint \"src/**/*.css\" --fix"
   },
-  "dependencies": {
+  "devDependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.6.3",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.33",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.2",
+    "@types/redux": "^3.6.0",
+    "@types/react-redux": "^7.1.16",
+    "@types/classnames": "^2.2.11",
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "stylelint": "13.9.0",
+    "stylelint-config-rational-order": "0.1.2",
     "eslint": "7.19.0",
-    "eslint-plugin-react": "7.22.0",
+    "eslint-plugin-react": "7.22.0"
+  },
+  "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.2",
-    "stylelint": "13.9.0",
-    "stylelint-config-rational-order": "0.1.2"
+    "classnames": "2.2.6",
+    "typescript": "^4.2.3"
   },
   "browserslist": {
     "production": [
