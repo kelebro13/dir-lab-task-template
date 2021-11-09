@@ -137,3 +137,5 @@ _NCrunch*
 
 !ClientConnectionLog.log
 bin/**/ClientConnectionLog.log
+
+!stylecop.json
