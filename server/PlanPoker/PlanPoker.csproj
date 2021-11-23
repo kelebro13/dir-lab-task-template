@@ -22,10 +22,14 @@
     <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
   </ItemGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\PlanPoker.Domain\PlanPoker.Domain.csproj" />
     <ProjectReference Include="..\PlanPoker.Infrastructure\PlanPoker.Infrastructure.csproj" />
   </ItemGroup>
-
 
 </Project>
