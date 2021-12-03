@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using PlanPoker.Domain.Services;
 
 namespace PlanPoker.Controllers
