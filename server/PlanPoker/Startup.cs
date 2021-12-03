@@ -32,12 +32,17 @@ namespace PlanPoker
       services
         .AddSingleton<IRepository<ExampleEntity>, ExampleRepository>()
         .AddTransient<ExampleService>();
+
+      services
+        .AddSwaggerGen();
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
       if (env.IsDevelopment())
       {
+        app.UseSwagger();
+        app.UseSwaggerUI();
         app.UseDeveloperExceptionPage();
       }
 
